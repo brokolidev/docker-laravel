@@ -71,6 +71,14 @@ class LoginController extends Controller
         ]);
     }
 
+    public function logout()
+    {
+        $user = auth()->user();
+        $user->toneks()->delete(); // 발급받은 토큰을 모두 삭제
+
+        return true;
+    }
+
     private function validator(Request $request)
     {
         //validation rules.
