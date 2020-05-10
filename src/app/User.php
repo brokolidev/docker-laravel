@@ -42,4 +42,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class);
     }
+
+    public function lastOrder()
+    {
+        return $this->hasOne(Order::class)->latest()->limit(1);
+    }
 }
