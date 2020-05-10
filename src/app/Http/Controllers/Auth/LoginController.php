@@ -74,9 +74,9 @@ class LoginController extends Controller
     public function logout()
     {
         $user = auth()->user();
-        $user->toneks()->delete(); // 발급받은 토큰을 모두 삭제
+        $user->tokens()->delete(); // 발급받은 토큰을 모두 삭제
 
-        return true;
+        return ['result' => true, 'message' => '로그아웃 성공'];
     }
 
     private function validator(Request $request)
