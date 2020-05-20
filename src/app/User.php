@@ -45,6 +45,6 @@ class User extends Authenticatable
 
     public function lastOrder()
     {
-        return $this->hasOne(Order::class)->latest()->limit(1);
+        return $this->hasOne(Order::class)->latest();
     }
 }
